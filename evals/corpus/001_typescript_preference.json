@@ -1,0 +1,28 @@
+{
+  "schema_version": "1",
+  "id": "001_typescript_preference",
+  "description": "User establishes a TypeScript preference at turn 3; tested at turn 12 after distractor turns about weather, food, and an unrelated bash question.",
+  "turns": [
+    {"role": "user", "content": "hi there"},
+    {"role": "assistant", "content": "Hello! How can I help today?"},
+    {"role": "user", "content": "I mostly work in TypeScript these days — I find the static typing helps me catch errors before runtime."},
+    {"role": "assistant", "content": "That makes sense. TypeScript is great for that. What kind of projects are you working on?"},
+    {"role": "user", "content": "Mostly Next.js web apps and some backend stuff with tRPC."},
+    {"role": "assistant", "content": "Cool stack. Anything I can help with right now?"},
+    {"role": "user", "content": "by the way, do you know the weather in San Francisco?"},
+    {"role": "assistant", "content": "I don't have real-time data, but I can help with anything programming-related."},
+    {"role": "user", "content": "what's a good lunch spot recommendation?"},
+    {"role": "assistant", "content": "I can't recommend specific restaurants without local data, but I'm happy to help with coding."},
+    {"role": "user", "content": "fair. how do I check the exit code of the last bash command?"},
+    {"role": "assistant", "content": "Use `echo $?` immediately after the command. It prints the exit code of the most recent command."},
+    {
+      "role": "user",
+      "content": "remind me — what language do I usually code in?",
+      "test_at": {
+        "question": "what programming language does the user prefer?",
+        "expected_fact": "user prefers TypeScript",
+        "expected_keywords": ["TypeScript"]
+      }
+    }
+  ]
+}

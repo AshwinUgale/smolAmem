@@ -1,0 +1,37 @@
+{
+  "schema_version": "1",
+  "id": "003_project_facts",
+  "description": "Multiple independent facts about the same project (Next.js 14, Drizzle ORM, Postgres). Tested individually to confirm each one is retrievable.",
+  "turns": [
+    {"role": "user", "content": "I'm building a SaaS dashboard."},
+    {"role": "assistant", "content": "Got it. What's the stack?"},
+    {"role": "user", "content": "Next.js 14 with the app router."},
+    {"role": "assistant", "content": "OK. Server components by default?"},
+    {"role": "user", "content": "yep, RSC everywhere except the chart pages."},
+    {"role": "assistant", "content": "Makes sense. Database?"},
+    {"role": "user", "content": "Postgres, with Drizzle ORM. Like the type-safe schema definitions."},
+    {"role": "assistant", "content": "Drizzle's TypeScript story is great. Auth?"},
+    {"role": "user", "content": "Clerk. Came over from Auth.js, found it too brittle."},
+    {"role": "assistant", "content": "Clerk's a solid choice. Hosting?"},
+    {"role": "user", "content": "Vercel for the app, Neon for the DB."},
+    {"role": "assistant", "content": "Classic Next.js+Neon combo."},
+    {
+      "role": "user",
+      "content": "what database am I using?",
+      "test_at": {
+        "question": "what database does the user's project use?",
+        "expected_fact": "user is using Postgres with Drizzle ORM",
+        "expected_keywords": ["Postgres", "Drizzle"]
+      }
+    },
+    {
+      "role": "user",
+      "content": "and the frontend framework?",
+      "test_at": {
+        "question": "what frontend framework does the user's project use?",
+        "expected_fact": "user is using Next.js 14 with the app router",
+        "expected_keywords": ["Next.js"]
+      }
+    }
+  ]
+}

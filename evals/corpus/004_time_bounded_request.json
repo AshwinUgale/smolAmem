@@ -1,0 +1,26 @@
+{
+  "schema_version": "1",
+  "id": "004_time_bounded_request",
+  "description": "An in-flight task ('migrate auth from Auth.js to Clerk') established mid-conversation, tested at the end. Tests time-bounded context recall (active TODO).",
+  "turns": [
+    {"role": "user", "content": "Hey, can you help me think through a migration?"},
+    {"role": "assistant", "content": "Of course. What are you migrating?"},
+    {"role": "user", "content": "I want to move our auth from Auth.js to Clerk. Found Auth.js too fiddly with the new app-router approach."},
+    {"role": "assistant", "content": "Got it. What's blocking the migration?"},
+    {"role": "user", "content": "I need a plan for migrating existing user sessions without forcing everyone to log out."},
+    {"role": "assistant", "content": "Clerk has a migration guide for exactly this — they support importing users with hashed passwords and then issuing session tokens on first sign-in."},
+    {"role": "user", "content": "perfect. I'll look into that."},
+    {"role": "assistant", "content": "Let me know if you hit anything."},
+    {"role": "user", "content": "btw, unrelated — what's the difference between let and const in JS?"},
+    {"role": "assistant", "content": "`let` is reassignable, `const` is not. Both are block-scoped. Use `const` by default, `let` only when you'll reassign."},
+    {
+      "role": "user",
+      "content": "ok thanks. now — what migration was I asking about earlier?",
+      "test_at": {
+        "question": "what migration is the user working on?",
+        "expected_fact": "user is migrating auth from Auth.js to Clerk",
+        "expected_keywords": ["Auth.js", "Clerk"]
+      }
+    }
+  ]
+}

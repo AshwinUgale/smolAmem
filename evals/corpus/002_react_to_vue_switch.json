@@ -1,0 +1,28 @@
+{
+  "schema_version": "1",
+  "id": "002_react_to_vue_switch",
+  "description": "User establishes React preference, then switches to Vue mid-conversation. Tests that memory surfaces the NEWER fact (Vue), not the older one (React).",
+  "turns": [
+    {"role": "user", "content": "I'm working on a frontend project using React"},
+    {"role": "assistant", "content": "Nice. React + which state management?"},
+    {"role": "user", "content": "Redux Toolkit for global state, just useState for local."},
+    {"role": "assistant", "content": "Sensible choice. Anything specific I can help with?"},
+    {"role": "user", "content": "actually let me show you something"},
+    {"role": "assistant", "content": "Sure, what's up?"},
+    {"role": "user", "content": "ok scratch all that — I just rewrote the whole thing in Vue 3 with the Composition API. The Redux story was driving me crazy and Vue's reactivity felt simpler."},
+    {"role": "assistant", "content": "Big rewrite! How was the migration?"},
+    {"role": "user", "content": "honestly easier than expected. Pinia replaces Redux nicely."},
+    {"role": "assistant", "content": "Glad it worked out. Pinia is a much smaller mental model than Redux."},
+    {"role": "user", "content": "yeah I'm fully on Vue now, not going back."},
+    {"role": "assistant", "content": "Good to know."},
+    {
+      "role": "user",
+      "content": "what framework am I currently using?",
+      "test_at": {
+        "question": "what frontend framework is the user currently using?",
+        "expected_fact": "user is using Vue 3 (switched from React)",
+        "expected_keywords": ["Vue"]
+      }
+    }
+  ]
+}

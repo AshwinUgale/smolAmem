@@ -1,0 +1,26 @@
+{
+  "schema_version": "1",
+  "id": "005_multi_fact_recall",
+  "description": "User establishes several user-level facts (location, role, preferred IDE) and then asks a question that should pull all three into context.",
+  "turns": [
+    {"role": "user", "content": "Quick intro: I'm a backend engineer at a fintech startup."},
+    {"role": "assistant", "content": "Nice to meet you. What languages do you work in?"},
+    {"role": "user", "content": "Mostly Python and a bit of Go for the high-throughput services."},
+    {"role": "assistant", "content": "Reasonable split. Where are you based?"},
+    {"role": "user", "content": "London. Office near Liverpool Street."},
+    {"role": "assistant", "content": "Got it. I'll keep the timezone in mind."},
+    {"role": "user", "content": "Oh and I live in VS Code with Vim keybindings. Anything else is friction."},
+    {"role": "assistant", "content": "Fair. Most people I work with either go VS Code + Vim mode or full Neovim."},
+    {"role": "user", "content": "Yeah I tried Neovim, came back to VS Code for the extensions."},
+    {"role": "assistant", "content": "The extension ecosystem is a real moat."},
+    {
+      "role": "user",
+      "content": "summarize what you know about me",
+      "test_at": {
+        "question": "what does the user do for work, where, and which editor?",
+        "expected_fact": "backend engineer at a fintech in London, uses VS Code with Vim keybindings",
+        "expected_keywords": ["backend", "London", "VS Code"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+site_name: Mneme
+site_description: Multi-tier long-term memory for LLM agents.
+site_url: https://ashwinugale.github.io/ashwinugale-mneme/
+repo_url: https://github.com/ashwinugale/ashwinugale-mneme
+repo_name: ashwinugale/ashwinugale-mneme
+edit_uri: edit/main/docs/
+
+# Material for MkDocs config. Theme + a small set of features that make
+# the site read well on both desktop and mobile. Keep this trim — the
+# docs site is part of the product surface and over-customisation tends
+# to age badly.
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+
+# Markdown extensions. The PyMdown set is the de-facto standard with
+# Material; admonitions + code-block tabs + footnotes are the bits the
+# docs actually use.
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.keys
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: google
+            show_source: false
+            show_root_heading: true
+            show_root_full_path: false
+            show_signature_annotations: true
+            separate_signature: true
+            merge_init_into_class: true
+            members_order: source
+            filters: ["!^_"]
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Concepts: concepts.md
+  - Backends: backends.md
+  - Embedders: embedders.md
+  - Adapters: adapters.md
+  - Eval harness: eval.md
+  - API reference: api.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ashwinugale/ashwinugale-mneme
