@@ -98,18 +98,4 @@ uv run python -m evals --runner mneme --output out/mneme.json
 
 ---
 
-## Status
-
-| Milestone | Status |
-|---|---|
-| v0.1 — walking skeleton | ✅ |
-| v0.2 — LLM-driven consolidation | ✅ |
-| v0.3 — forgetting + scheduler | ✅ |
-| v0.4 — Qdrant + pgvector backends | ✅ |
-| v0.5 — LangChain / LlamaIndex / OpenAI adapters | ✅ |
-| v0.6 — eval harness | ✅ |
-| v0.7 — docs site | ✅ (you're reading it) |
-| v0.8 — integration validation | ✅ |
-| **v1.0 — PyPI release** | **✅** |
-
-[GitHub](https://github.com/ashwinugale/ashwinugale-mneme){ .md-button } [Issues](https://github.com/ashwinugale/ashwinugale-mneme/issues){ .md-button }
+[GitHub](https://github.com/ashwinugale/ashwinugale-mneme){ .md-button } [Issues](https://github.com/ashwinugale/ashwinugale-mneme/issues){ .md-button } [Changelog](https://github.com/ashwinugale/ashwinugale-mneme/blob/main/CHANGELOG.md){ .md-button }
