@@ -147,7 +147,7 @@ A few caveats worth knowing:
 
 - **Daemon thread**, not asyncio. `BackgroundScheduler(daemon=True)` so the scheduler doesn't keep the process alive after main exits. There's a best-effort `__del__` cleanup but you should still call `stop_scheduler()` explicitly when you can.
 - **`max_instances=1, coalesce=True`** on both jobs. If a previous run is still in flight, the next tick is dropped — not queued — so we never stack runs on top of each other.
-- **`pip install "mneme[scheduler]"`** to get the dep. Without it, `start_scheduler` raises with a helpful hint.
+- **`pip install "smolAmem[scheduler]"`** to get the dep. Without it, `start_scheduler` raises with a helpful hint.
 
 ---
 

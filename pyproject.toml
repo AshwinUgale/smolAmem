@@ -1,14 +1,20 @@
 [project]
-name = "mneme"
-version = "0.0.1"
-description = "Multi-tier long-term memory for LLM agents."
+# PyPI name is "smolAmem" because "mneme" was already taken.
+# The Python import name is still ``mneme`` (the wheel ships
+# ``src/mneme/``, see ``[tool.hatch.build.targets.wheel]`` below) -
+# same pattern as Pillow/PIL, pyyaml/yaml, python-dateutil/dateutil.
+# Install: ``pip install smolAmem``
+# Import:  ``import mneme``
+name = "smolAmem"
+version = "1.0.0"
+description = "Multi-tier long-term memory for LLM agents. Install: pip install smolAmem. Import: import mneme."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [{ name = "Ashwin Ugale", email = "ugaleashwin@gmail.com" }]
 keywords = ["llm", "memory", "agents", "rag", "vector-search"]
 classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",

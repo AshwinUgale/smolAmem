@@ -7,9 +7,9 @@ Pick by environment:
 | Backend | Best for | Install |
 |---|---|---|
 | `InMemoryBackend` | Tests, ephemeral demos, fastest path | core install — no extras |
-| `SQLiteBackend` | Single-process apps, prototypes, CLI tools | `pip install "mneme[sqlite]"` |
-| `QdrantBackend` | Production agents, scale, multi-process | `pip install "mneme[qdrant]"` |
-| `PgVectorBackend` | Postgres shops, transactional integration | `pip install "mneme[pgvector]"` |
+| `SQLiteBackend` | Single-process apps, prototypes, CLI tools | `pip install "smolAmem[sqlite]"` |
+| `QdrantBackend` | Production agents, scale, multi-process | `pip install "smolAmem[qdrant]"` |
+| `PgVectorBackend` | Postgres shops, transactional integration | `pip install "smolAmem[pgvector]"` |
 
 ---
 
@@ -54,7 +54,7 @@ Notes:
 - **No KNN MATCH syntax.** We use `vec_distance_cosine` as a scalar in normal `WHERE / ORDER BY / LIMIT` so agent + tier + metadata filters compose without losing top-k.
 - **4x over-fetch** for metadata filtering at the Python layer. Tunable if you need it.
 - **Single connection per backend.** Not thread-safe at the connection layer; wrap with your own pool if you need concurrency.
-- **`pip install "mneme[sqlite]"`** brings in `sqlite-vec`. Without it, `SQLiteBackend()` raises with a helpful import hint.
+- **`pip install "smolAmem[sqlite]"`** brings in `sqlite-vec`. Without it, `SQLiteBackend()` raises with a helpful import hint.
 
 `:memory:` works too if you want a SQLite-flavoured ephemeral store for tests.
 

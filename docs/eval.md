@@ -2,7 +2,7 @@
 
 Mneme ships a reproducible benchmark in `evals/`. Plays a labelled corpus of conversations through one of four memory strategies and reports two strategy-vs-strategy metrics: `recall@k` and token cost.
 
-Not installed by `pip install mneme` — `evals/` is a sibling package at the repo root, used by people who clone the repo to reproduce numbers.
+Not installed by `pip install smolAmem` — `evals/` is a sibling package at the repo root, used by people who clone the repo to reproduce numbers.
 
 ---
 

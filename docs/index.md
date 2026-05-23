@@ -2,8 +2,8 @@
 
 > Multi-tier long-term memory for LLM agents. Working / episodic / semantic tiers, pluggable storage backends, framework-agnostic adapters, and explicit forgetting + consolidation.
 
-!!! warning "Pre-alpha"
-    APIs will change before 1.0. Pin to a specific version if you build on it. The shape of the public surface is now stable enough to depend on for prototypes.
+!!! success "1.0 released"
+    Public APIs are stable. Semver from here — minor releases add, patch releases fix, major releases break (rarely). Pin to a major version (`smolAmem>=1,<2`) and you're safe.
 
 ---
 
@@ -26,10 +26,13 @@ Plus the things you'd want on top: semantic + lexical retrieval with authority w
 ## Install
 
 ```bash
-pip install mneme                   # core only
-pip install "mneme[sqlite,openai]"  # SQLite backend + OpenAI embeddings
-pip install "mneme[qdrant,openai]"  # production-grade vector backend
+pip install smolAmem                   # core only
+pip install "smolAmem[sqlite,openai]"  # SQLite backend + OpenAI embeddings
+pip install "smolAmem[qdrant,openai]"  # production-grade vector backend
 ```
+
+!!! info "Install vs import"
+    PyPI name is `smolAmem` (the `mneme` slot was already taken). The Python import name stays `mneme` — same dual-name pattern as `Pillow` / `PIL` or `pyyaml` / `yaml`. So you `pip install smolAmem` but write `import mneme` in your code.
 
 Other extras: `pgvector`, `scheduler`, `langchain`, `llamaindex`, `tokens`, `docs`. See [Backends](backends.md) and [Embedders](embedders.md) for the full matrix.
 
@@ -106,6 +109,7 @@ uv run python -m evals --runner mneme --output out/mneme.json
 | v0.5 — LangChain / LlamaIndex / OpenAI adapters | ✅ |
 | v0.6 — eval harness | ✅ |
 | v0.7 — docs site | ✅ (you're reading it) |
-| v1.0 — PyPI release | ⏳ |
+| v0.8 — integration validation | ✅ |
+| **v1.0 — PyPI release** | **✅** |
 
 [GitHub](https://github.com/ashwinugale/ashwinugale-mneme){ .md-button } [Issues](https://github.com/ashwinugale/ashwinugale-mneme/issues){ .md-button }

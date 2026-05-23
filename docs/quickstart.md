@@ -7,10 +7,13 @@ A 60-second walk-through. By the end you'll have a `MemoryManager` that stores c
 ## 1. Install
 
 ```bash
-pip install "mneme[sqlite,openai]"
+pip install "smolAmem[sqlite,openai]"
 ```
 
-The core install (`pip install mneme`) has zero dependencies. Every storage backend, embedder, judge, and framework adapter is an opt-in extra so you only pay for what you use.
+The core install (`pip install smolAmem`) has zero dependencies. Every storage backend, embedder, judge, and framework adapter is an opt-in extra so you only pay for what you use.
+
+!!! info "Install vs import"
+    The PyPI name is `smolAmem` (the `mneme` slot was already taken) but the Python import name stays `mneme`. So `pip install smolAmem` then `import mneme` — same pattern as `Pillow` / `PIL`.
 
 For this walkthrough you need:
 
@@ -131,7 +134,7 @@ m.start_scheduler(
 m.stop_scheduler()
 ```
 
-This uses APScheduler's `BackgroundScheduler` under the hood. `pip install "mneme[scheduler]"` to get the dep. See [Concepts → Background workers](concepts.md#background-workers).
+This uses APScheduler's `BackgroundScheduler` under the hood. `pip install "smolAmem[scheduler]"` to get the dep. See [Concepts → Background workers](concepts.md#background-workers).
 
 ---
 

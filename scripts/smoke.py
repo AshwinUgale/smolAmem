@@ -36,7 +36,7 @@ import time
 import uuid
 
 # Load .env if python-dotenv happens to be installed. Optional so the
-# script also works in plain `pip install mneme` environments. We pass
+# script also works in plain `pip install smolAmem` environments. We pass
 # ``encoding="utf-8-sig"`` so a .env saved by Windows tooling (Notepad,
 # VS Code) with a UTF-8 BOM still loads — the vanilla ``load_dotenv()``
 # call mishandles the BOM and silently produces an empty result.

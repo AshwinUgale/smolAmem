@@ -29,7 +29,7 @@ from mneme.types import (
 #   from mneme.adapters import MnemeLlamaIndexMemory    # needs [llamaindex]
 #   from mneme.adapters import context_for              # needs [tokens] for budget
 
-__version__ = "0.0.1"
+__version__ = "1.0.0"
 
 __all__ = [
     "EmbeddingProvider",

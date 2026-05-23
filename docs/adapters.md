@@ -4,8 +4,8 @@ Three drop-in shims so Mneme works with the agent stack you already have:
 
 | Adapter | What it satisfies | Install |
 |---|---|---|
-| `MnemeChatMessageHistory` | LangChain's `BaseChatMessageHistory` | `pip install "mneme[langchain]"` |
-| `MnemeLlamaIndexMemory` | LlamaIndex's `BaseMemory` | `pip install "mneme[llamaindex]"` |
+| `MnemeChatMessageHistory` | LangChain's `BaseChatMessageHistory` | `pip install "smolAmem[langchain]"` |
+| `MnemeLlamaIndexMemory` | LlamaIndex's `BaseMemory` | `pip install "smolAmem[llamaindex]"` |
 | `context_for` | A function that returns OpenAI-style `messages=[...]` | core install; `[tokens]` for budget packing |
 
 All three follow the same design principles:
@@ -117,7 +117,7 @@ Notes:
 
 - **One `system` block carries the retrieved memory.** Items get `[FACT id=...]` / `[EPISODE id=...]` citation markers so the model can weight by tier authority if you prompt it to (or so you can inspect why an answer cited what it did).
 - **Working memory follows the system block** in chronological order. Roles are passed through verbatim.
-- **`token_budget` packs to a tiktoken count.** Working memory wins over retrieved memory when forced to drop something — the model needs the recent conversation to respond at all; retrieved context is additive. Requires `pip install "mneme[tokens]"`; without it, raise with a helpful hint.
+- **`token_budget` packs to a tiktoken count.** Working memory wins over retrieved memory when forced to drop something — the model needs the recent conversation to respond at all; retrieved context is additive. Requires `pip install "smolAmem[tokens]"`; without it, raise with a helpful hint.
 - **`cl100k_base`** is the encoding used for budget calculation. That covers every OpenAI chat model from gpt-3.5-turbo through gpt-4o. For other providers, the count is approximate.
 
 ---

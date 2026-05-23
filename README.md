@@ -6,7 +6,7 @@
 [![python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
 [![license](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
-**Status:** pre-alpha. APIs will change before 1.0. Pin to a specific version if you build on it.
+**Status:** 1.0 released. APIs are stable; semver from here. Bug reports welcome.
 
 ## Why
 
@@ -17,10 +17,12 @@ Mneme is the library you wish existed.
 ## Install
 
 ```bash
-pip install mneme                    # core only
-pip install "mneme[sqlite,openai]"   # SQLite + OpenAI embeddings
-pip install "mneme[qdrant,openai]"   # production vector backend
+pip install smolAmem                    # core only
+pip install "smolAmem[sqlite,openai]"   # SQLite + OpenAI embeddings
+pip install "smolAmem[qdrant,openai]"   # production vector backend
 ```
+
+> **Heads-up on naming:** PyPI install name is `smolAmem` (the `mneme` slot was already taken). Python import name stays `mneme` — same dual-name pattern as `Pillow` / `PIL` or `pyyaml` / `yaml`. So you `pip install smolAmem` but write `import mneme` everywhere in your code.
 
 ## Quickstart
 

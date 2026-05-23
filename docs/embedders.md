@@ -4,7 +4,7 @@ An embedder turns text into a fixed-dimensional vector. Mneme stores the vector 
 
 | Embedder | Best for | Install |
 |---|---|---|
-| `OpenAIEmbeddings` | Real semantic similarity in production | `pip install "mneme[openai]"` |
+| `OpenAIEmbeddings` | Real semantic similarity in production | `pip install "smolAmem[openai]"` |
 | `HashEmbedder` | Tests, deterministic CI, no-key paths | core install — no extras |
 
 ---

@@ -1466,106 +1466,6 @@ wheels = [
 ]
 
 [[package]]
-name = "mneme"
-version = "0.0.1"
-source = { editable = "." }
-
-[package.optional-dependencies]
-docs = [
-    { name = "mkdocs" },
-    { name = "mkdocs-material" },
-    { name = "mkdocstrings", extra = ["python"] },
-    { name = "pymdown-extensions" },
-]
-langchain = [
-    { name = "langchain-core" },
-]
-llamaindex = [
-    { name = "llama-index-core" },
-]
-openai = [
-    { name = "openai" },
-]
-pgvector = [
-    { name = "pgvector" },
-    { name = "psycopg", extra = ["binary"] },
-]
-qdrant = [
-    { name = "qdrant-client" },
-]
-scheduler = [
-    { name = "apscheduler" },
-]
-sqlite = [
-    { name = "sqlite-vec" },
-]
-tokens = [
-    { name = "tiktoken" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "apscheduler" },
-    { name = "langchain-core" },
-    { name = "llama-index-core" },
-    { name = "mkdocs" },
-    { name = "mkdocs-material" },
-    { name = "mkdocstrings", extra = ["python"] },
-    { name = "mypy" },
-    { name = "openai" },
-    { name = "pgvector" },
-    { name = "psycopg", extra = ["binary"] },
-    { name = "pymdown-extensions" },
-    { name = "pytest" },
-    { name = "pytest-cov" },
-    { name = "python-dotenv" },
-    { name = "qdrant-client" },
-    { name = "ruff" },
-    { name = "sqlite-vec" },
-    { name = "tiktoken" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "apscheduler", marker = "extra == 'scheduler'", specifier = ">=3.10" },
-    { name = "langchain-core", marker = "extra == 'langchain'", specifier = ">=0.3" },
-    { name = "llama-index-core", marker = "extra == 'llamaindex'", specifier = ">=0.11" },
-    { name = "mkdocs", marker = "extra == 'docs'", specifier = ">=1.6" },
-    { name = "mkdocs-material", marker = "extra == 'docs'", specifier = ">=9.5" },
-    { name = "mkdocstrings", extras = ["python"], marker = "extra == 'docs'", specifier = ">=0.26" },
-    { name = "openai", marker = "extra == 'openai'", specifier = ">=1.40" },
-    { name = "pgvector", marker = "extra == 'pgvector'", specifier = ">=0.3" },
-    { name = "psycopg", extras = ["binary"], marker = "extra == 'pgvector'", specifier = ">=3.2" },
-    { name = "pymdown-extensions", marker = "extra == 'docs'", specifier = ">=10.7" },
-    { name = "qdrant-client", marker = "extra == 'qdrant'", specifier = ">=1.12" },
-    { name = "sqlite-vec", marker = "extra == 'sqlite'", specifier = ">=0.1.6" },
-    { name = "tiktoken", marker = "extra == 'tokens'", specifier = ">=0.7" },
-]
-provides-extras = ["sqlite", "qdrant", "pgvector", "openai", "scheduler", "langchain", "llamaindex", "tokens", "docs"]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "apscheduler", specifier = ">=3.10" },
-    { name = "langchain-core", specifier = ">=0.3" },
-    { name = "llama-index-core", specifier = ">=0.11" },
-    { name = "mkdocs", specifier = ">=1.6" },
-    { name = "mkdocs-material", specifier = ">=9.5" },
-    { name = "mkdocstrings", extras = ["python"], specifier = ">=0.26" },
-    { name = "mypy", specifier = ">=1.10" },
-    { name = "openai", specifier = ">=1.40" },
-    { name = "pgvector", specifier = ">=0.3" },
-    { name = "psycopg", extras = ["binary"], specifier = ">=3.2" },
-    { name = "pymdown-extensions", specifier = ">=10.7" },
-    { name = "pytest", specifier = ">=8.0" },
-    { name = "pytest-cov", specifier = ">=5.0" },
-    { name = "python-dotenv", specifier = ">=1.0" },
-    { name = "qdrant-client", specifier = ">=1.12" },
-    { name = "ruff", specifier = ">=0.6" },
-    { name = "sqlite-vec", specifier = ">=0.1.6" },
-    { name = "tiktoken", specifier = ">=0.7" },
-]
-
-[[package]]
 name = "multidict"
 version = "6.7.1"
 source = { registry = "https://pypi.org/simple" }
@@ -2758,6 +2658,106 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz", hash = "sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81", size = 34031, upload-time = "2024-12-04T17:35:28.174Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl", hash = "sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274", size = 11050, upload-time = "2024-12-04T17:35:26.475Z" },
+]
+
+[[package]]
+name = "smolamem"
+version = "1.0.0"
+source = { editable = "." }
+
+[package.optional-dependencies]
+docs = [
+    { name = "mkdocs" },
+    { name = "mkdocs-material" },
+    { name = "mkdocstrings", extra = ["python"] },
+    { name = "pymdown-extensions" },
+]
+langchain = [
+    { name = "langchain-core" },
+]
+llamaindex = [
+    { name = "llama-index-core" },
+]
+openai = [
+    { name = "openai" },
+]
+pgvector = [
+    { name = "pgvector" },
+    { name = "psycopg", extra = ["binary"] },
+]
+qdrant = [
+    { name = "qdrant-client" },
+]
+scheduler = [
+    { name = "apscheduler" },
+]
+sqlite = [
+    { name = "sqlite-vec" },
+]
+tokens = [
+    { name = "tiktoken" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "apscheduler" },
+    { name = "langchain-core" },
+    { name = "llama-index-core" },
+    { name = "mkdocs" },
+    { name = "mkdocs-material" },
+    { name = "mkdocstrings", extra = ["python"] },
+    { name = "mypy" },
+    { name = "openai" },
+    { name = "pgvector" },
+    { name = "psycopg", extra = ["binary"] },
+    { name = "pymdown-extensions" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "python-dotenv" },
+    { name = "qdrant-client" },
+    { name = "ruff" },
+    { name = "sqlite-vec" },
+    { name = "tiktoken" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "apscheduler", marker = "extra == 'scheduler'", specifier = ">=3.10" },
+    { name = "langchain-core", marker = "extra == 'langchain'", specifier = ">=0.3" },
+    { name = "llama-index-core", marker = "extra == 'llamaindex'", specifier = ">=0.11" },
+    { name = "mkdocs", marker = "extra == 'docs'", specifier = ">=1.6" },
+    { name = "mkdocs-material", marker = "extra == 'docs'", specifier = ">=9.5" },
+    { name = "mkdocstrings", extras = ["python"], marker = "extra == 'docs'", specifier = ">=0.26" },
+    { name = "openai", marker = "extra == 'openai'", specifier = ">=1.40" },
+    { name = "pgvector", marker = "extra == 'pgvector'", specifier = ">=0.3" },
+    { name = "psycopg", extras = ["binary"], marker = "extra == 'pgvector'", specifier = ">=3.2" },
+    { name = "pymdown-extensions", marker = "extra == 'docs'", specifier = ">=10.7" },
+    { name = "qdrant-client", marker = "extra == 'qdrant'", specifier = ">=1.12" },
+    { name = "sqlite-vec", marker = "extra == 'sqlite'", specifier = ">=0.1.6" },
+    { name = "tiktoken", marker = "extra == 'tokens'", specifier = ">=0.7" },
+]
+provides-extras = ["sqlite", "qdrant", "pgvector", "openai", "scheduler", "langchain", "llamaindex", "tokens", "docs"]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "apscheduler", specifier = ">=3.10" },
+    { name = "langchain-core", specifier = ">=0.3" },
+    { name = "llama-index-core", specifier = ">=0.11" },
+    { name = "mkdocs", specifier = ">=1.6" },
+    { name = "mkdocs-material", specifier = ">=9.5" },
+    { name = "mkdocstrings", extras = ["python"], specifier = ">=0.26" },
+    { name = "mypy", specifier = ">=1.10" },
+    { name = "openai", specifier = ">=1.40" },
+    { name = "pgvector", specifier = ">=0.3" },
+    { name = "psycopg", extras = ["binary"], specifier = ">=3.2" },
+    { name = "pymdown-extensions", specifier = ">=10.7" },
+    { name = "pytest", specifier = ">=8.0" },
+    { name = "pytest-cov", specifier = ">=5.0" },
+    { name = "python-dotenv", specifier = ">=1.0" },
+    { name = "qdrant-client", specifier = ">=1.12" },
+    { name = "ruff", specifier = ">=0.6" },
+    { name = "sqlite-vec", specifier = ">=0.1.6" },
+    { name = "tiktoken", specifier = ">=0.7" },
 ]
 
 [[package]]
