@@ -53,19 +53,22 @@ The full site lives at **[ashwinugale.github.io/ashwinugale-mneme](https://ashwi
 
 ## Benchmark snapshot
 
-From the v0.6 [eval harness](https://ashwinugale.github.io/ashwinugale-mneme/eval/) on the 5-conversation starter corpus, k=5, deterministic HashEmbedder (no API key required):
+From the v0.6 [eval harness](https://ashwinugale.github.io/ashwinugale-mneme/eval/) on the 5-conversation starter corpus, k=5:
 
 | Strategy | recall@5 | tokens / test point |
 |---|---|---|
 | `no_memory` | 0.000 | 0.0 |
-| **`mneme`** | **0.833** | **68.0** |
+| `mneme` (hash, deterministic) | 0.833 | 68.0 |
+| **`mneme` (OpenAI embeddings)** | **1.000** | **67.7** |
 | `full_history` | 1.000 | 141.0 |
 | `summary_buffer` | 1.000 | 165.3 |
+
+Mneme matches the full-history oracle for accuracy at **less than half** the token cost. The HashEmbedder row is the cheap deterministic baseline that runs without an API key — useful in CI and for reviewers reproducing numbers.
 
 Reproduce:
 
 ```bash
-uv run python -m evals --runner mneme --output out/mneme.json
+uv run python -m evals --runner mneme --embedder openai --output out/mneme.json
 ```
 
 ## License

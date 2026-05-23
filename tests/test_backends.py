@@ -52,10 +52,16 @@ _PGVECTOR_DSN = os.environ.get("MNEME_TEST_PGVECTOR_DSN")
 
 
 def _qdrant_client():
-    """Lazy import so the file loads without the [qdrant] extra installed."""
+    """Lazy import so the file loads without the [qdrant] extra installed.
+
+    ``check_compatibility=False`` because the bundled docker-compose pins
+    an older qdrant server while ``qdrant-client`` floats; the mismatch
+    warning is noise for our purposes (we exercise only the stable subset
+    of the API). Production callers can leave compatibility checking on.
+    """
     from qdrant_client import QdrantClient
 
-    return QdrantClient(url=_QDRANT_URL)
+    return QdrantClient(url=_QDRANT_URL, check_compatibility=False)
 
 
 @pytest.fixture(params=["memory", "sqlite", "qdrant", "pgvector"])

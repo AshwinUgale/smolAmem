@@ -33,10 +33,21 @@ already give a meaningful strategy-vs-strategy comparison.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import json
 import sys
 from pathlib import Path
 from typing import Any
+
+# Optional .env loading so the CLI picks up OPENAI_API_KEY without the
+# caller having to ``$env:OPENAI_API_KEY = ...`` in every shell. Encoding
+# matches tests/conftest.py — Windows tooling tends to write UTF-8 with
+# a BOM and vanilla load_dotenv() silently mishandles it.
+with contextlib.suppress(ImportError):
+    from dotenv import load_dotenv
+
+    _env_path = Path(__file__).resolve().parent.parent / ".env"
+    load_dotenv(_env_path, encoding="utf-8-sig")
 
 from evals.baselines import (
     FullHistoryStrategy,

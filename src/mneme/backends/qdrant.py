@@ -158,15 +158,36 @@ class QdrantBackend:
 
     def _ensure_collection(self) -> None:
         existing = {c.name for c in self._client.get_collections().collections}
-        if self._collection in existing:
-            return
-        self._client.create_collection(
-            collection_name=self._collection,
-            vectors_config=self._models.VectorParams(
-                size=self._dimensions,
-                distance=self._models.Distance.COSINE,
-            ),
-        )
+        if self._collection not in existing:
+            self._client.create_collection(
+                collection_name=self._collection,
+                vectors_config=self._models.VectorParams(
+                    size=self._dimensions,
+                    distance=self._models.Distance.COSINE,
+                ),
+            )
+        # Payload indexes. Qdrant requires a range index on any field used
+        # in ``order_by`` (we use it on ``created_at`` in ``list_recent``).
+        # KEYWORD indexes on ``agent_id`` and ``tier`` aren't strictly
+        # required but they're hot filter paths on every read — indexing
+        # them keeps multi-tenant query latency sane as the collection
+        # grows. ``create_payload_index`` is idempotent: re-running it on
+        # an existing index is a cheap no-op, but we still wrap in
+        # ``contextlib.suppress`` defensively so a future Qdrant version
+        # that errors on duplicate-index doesn't break construction.
+        import contextlib
+
+        for field, schema in (
+            ("created_at", self._models.PayloadSchemaType.DATETIME),
+            ("agent_id", self._models.PayloadSchemaType.KEYWORD),
+            ("tier", self._models.PayloadSchemaType.KEYWORD),
+        ):
+            with contextlib.suppress(Exception):
+                self._client.create_payload_index(
+                    collection_name=self._collection,
+                    field_name=field,
+                    field_schema=schema,
+                )
 
     # -- writes --------------------------------------------------------------
 
@@ -212,7 +233,18 @@ class QdrantBackend:
         ids = list(record_ids)
         if not ids:
             return 0
-        qids = [_id_to_qdrant(rid) for rid in ids]
+        # Skip IDs that aren't valid hex UUIDs — same "silently skip
+        # unknown id" contract as get() / delete(). A malformed id is
+        # by definition not in the store, so the right behavior is to
+        # treat it like a miss, not raise.
+        qids: list[str] = []
+        for rid in ids:
+            try:
+                qids.append(_id_to_qdrant(rid))
+            except ValueError:
+                continue
+        if not qids:
+            return 0
         # Read current access_counts, increment in Python, set_payload.
         # Qdrant lacks a server-side "increment" operator; this is two RTTs
         # but each round-trip is cheap.

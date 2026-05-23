@@ -8,18 +8,21 @@ Not installed by `pip install mneme` — `evals/` is a sibling package at the re
 
 ## Headline numbers
 
-From a fresh clone, with no API key, on the 5-conversation starter corpus:
+From a fresh clone on the 5-conversation starter corpus, k=5:
 
 | Strategy | recall@5 | tokens / test point |
 |---|---|---|
 | `no_memory` | 0.000 | 0.0 |
-| **`mneme`** | **0.833** | **68.0** |
+| `mneme` (HashEmbedder, deterministic, no key) | 0.833 | 68.0 |
+| **`mneme` (OpenAI `text-embedding-3-small`)** | **1.000** | **67.7** |
 | `full_history` | 1.000 | 141.0 |
 | `summary_buffer` | 1.000 | 165.3 |
 
-Read this as: Mneme hits 5/6 labelled facts at less than half the token cost of full-history, *with the deterministic HashEmbedder*. Real OpenAI embeddings push recall higher; cost stays bounded by `k`.
+Read this as:
 
-Note that `summary_buffer` here is *worse* than full-history on tokens — the trivial built-in summariser concatenates rather than compressing. Plug in a real LLM summary callback (see the strategy module) to make it a fair comparison.
+- With **real OpenAI embeddings**, Mneme matches the full-history oracle's accuracy (1.000) at less than half its token cost (67.7 vs 141.0). That's the entire pitch of the library, made falsifiable.
+- With the **HashEmbedder** (deterministic, no API key) Mneme still hits 5/6 labelled facts at the same cost. Useful as a no-spend baseline in CI and for reviewers reproducing the harness without an OpenAI account.
+- `summary_buffer` here is *worse* than full-history on tokens because the trivial built-in summariser concatenates rather than compressing. Plug in a real LLM summariser via the strategy's `summarize_fn` callback to make that comparison fair.
 
 ---
 

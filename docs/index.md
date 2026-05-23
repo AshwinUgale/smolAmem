@@ -60,18 +60,25 @@ For a more realistic walkthrough — including `consolidate()`, `forget()`, and 
 
 ## Benchmark snapshot
 
-Numbers from the v0.6 [eval harness](eval.md) on the 5-conversation starter corpus, k=5, with the deterministic HashEmbedder (no API key):
+Numbers from the v0.6 [eval harness](eval.md) on the 5-conversation starter corpus, k=5:
 
 | Strategy | recall@5 | tokens / test point |
 |---|---|---|
 | `no_memory` | 0.000 | 0.0 |
-| **`mneme`** | **0.833** | **68.0** |
+| `mneme` (hash, deterministic) | 0.833 | 68.0 |
+| **`mneme` (OpenAI embeddings)** | **1.000** | **67.7** |
 | `full_history` | 1.000 | 141.0 |
 | `summary_buffer` | 1.000 | 165.3 |
 
-Mneme hits 5/6 labelled facts at less than half the token cost of the full-history oracle — *with the hash embedder*. Real OpenAI embeddings push recall higher; cost stays bounded by k. Reproduce locally:
+With real embeddings, Mneme matches the full-history oracle's accuracy (1.000) at less than half its token cost (67.7 vs 141.0). The HashEmbedder row is the cheap deterministic baseline that runs without an API key — useful in CI and for reviewers reproducing numbers without spending tokens.
+
+Reproduce locally:
 
 ```bash
+# With OpenAI embeddings (set OPENAI_API_KEY first):
+uv run python -m evals --runner mneme --embedder openai --output out/mneme.json
+
+# Or the no-key deterministic baseline:
 uv run python -m evals --runner mneme --output out/mneme.json
 ```
 
