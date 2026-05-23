@@ -2,7 +2,7 @@
 
 > Multi-tier long-term memory for LLM agents. Working / episodic / semantic tiers, pluggable storage backends, framework-agnostic adapters, and explicit forgetting + consolidation.
 
-[![docs](https://img.shields.io/badge/docs-ashwinugale.github.io%2Fashwinugale--mneme-blue)](https://ashwinugale.github.io/ashwinugale-mneme/)
+[![docs](https://img.shields.io/badge/docs-ashwinugale.github.io%2FsmolAmem-blue)](https://ashwinugale.github.io/smolAmem/)
 [![python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
 [![license](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
@@ -41,21 +41,21 @@ for r in m.retrieve("what language does the user prefer?", k=3):
     print(r.score, r.record.content)
 ```
 
-Full walkthrough: [docs/quickstart](https://ashwinugale.github.io/ashwinugale-mneme/quickstart/).
+Full walkthrough: [docs/quickstart](https://ashwinugale.github.io/smolAmem/quickstart/).
 
 ## Documentation
 
-The full site lives at **[ashwinugale.github.io/ashwinugale-mneme](https://ashwinugale.github.io/ashwinugale-mneme/)**.
+The full site lives at **[ashwinugale.github.io/smolAmem](https://ashwinugale.github.io/smolAmem/)**.
 
-- [Concepts](https://ashwinugale.github.io/ashwinugale-mneme/concepts/) — the three-tier model, retrieval, consolidation, forgetting.
-- [Backends](https://ashwinugale.github.io/ashwinugale-mneme/backends/) — InMemory, SQLite, Qdrant, pgvector.
-- [Adapters](https://ashwinugale.github.io/ashwinugale-mneme/adapters/) — LangChain, LlamaIndex, raw OpenAI.
-- [Eval harness](https://ashwinugale.github.io/ashwinugale-mneme/eval/) — reproducible recall@k + token-cost benchmark.
-- [API reference](https://ashwinugale.github.io/ashwinugale-mneme/api/) — autogen from docstrings.
+- [Concepts](https://ashwinugale.github.io/smolAmem/concepts/) — the three-tier model, retrieval, consolidation, forgetting.
+- [Backends](https://ashwinugale.github.io/smolAmem/backends/) — InMemory, SQLite, Qdrant, pgvector.
+- [Adapters](https://ashwinugale.github.io/smolAmem/adapters/) — LangChain, LlamaIndex, raw OpenAI.
+- [Eval harness](https://ashwinugale.github.io/smolAmem/eval/) — reproducible recall@k + token-cost benchmark.
+- [API reference](https://ashwinugale.github.io/smolAmem/api/) — autogen from docstrings.
 
 ## Benchmark snapshot
 
-From the v0.6 [eval harness](https://ashwinugale.github.io/ashwinugale-mneme/eval/) on the 5-conversation starter corpus, k=5:
+From the v0.6 [eval harness](https://ashwinugale.github.io/smolAmem/eval/) on the 5-conversation starter corpus, k=5:
 
 | Strategy | recall@5 | tokens / test point |
 |---|---|---|

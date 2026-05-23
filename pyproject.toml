@@ -52,10 +52,10 @@ docs = [
 ]
 
 [project.urls]
-Homepage = "https://ashwinugale.github.io/ashwinugale-mneme/"
-Documentation = "https://ashwinugale.github.io/ashwinugale-mneme/"
-Repository = "https://github.com/ashwinugale/ashwinugale-mneme"
-Issues = "https://github.com/ashwinugale/ashwinugale-mneme/issues"
+Homepage = "https://ashwinugale.github.io/smolAmem/"
+Documentation = "https://ashwinugale.github.io/smolAmem/"
+Repository = "https://github.com/ashwinugale/smolAmem"
+Issues = "https://github.com/ashwinugale/smolAmem/issues"
 
 [build-system]
 requires = ["hatchling"]

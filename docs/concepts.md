@@ -36,7 +36,7 @@ Durable facts about the user / project / preferences, extracted from episodes by
 - **Authority weight:** higher than episodic (default 1.0 vs 0.7). When the same fact surfaces from both tiers, the semantic record wins.
 - **Why use this instead of just searching episodic?** Compression. A semantic fact is one sentence; the equivalent episodic content might be twenty interleaved turns. Putting one sentence in the prompt is cheaper, scans faster, and gives the model less to ignore.
 
-[`02-architecture/01-tier-design`](https://github.com/ashwinugale/ashwinugale-mneme/tree/main/src/mneme/tiers) in the source has the tier classes.
+[`02-architecture/01-tier-design`](https://github.com/ashwinugale/smolAmem/tree/main/src/mneme/tiers) in the source has the tier classes.
 
 ---
 

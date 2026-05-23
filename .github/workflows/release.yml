@@ -12,7 +12,7 @@
 #      "pending publisher":
 #          - PyPI Project Name:  smolAmem
 #          - Owner:              AshwinUgale
-#          - Repository name:    ashwinugale-mneme
+#          - Repository name:    smolAmem
 #          - Workflow name:      release.yml
 #          - Environment name:   pypi      (must match the `environment:` below)
 #   3. The first time this workflow runs successfully, PyPI creates the

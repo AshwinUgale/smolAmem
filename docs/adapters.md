@@ -146,4 +146,4 @@ If your stack uses an agent framework, use its adapter — that's the path of le
 
 If you're calling OpenAI / Anthropic / etc. directly, use `context_for`. It's just a function; no inheritance, no Pydantic field machinery, no async surface to navigate.
 
-If you're using LangGraph, there's no adapter yet — `MnemeChatMessageHistory` is usable from inside a LangGraph node, but the checkpoint API is a separate, larger surface. Track [issue tracking on the repo](https://github.com/ashwinugale/ashwinugale-mneme/issues) or file a request with a concrete use case.
+If you're using LangGraph, there's no adapter yet — `MnemeChatMessageHistory` is usable from inside a LangGraph node, but the checkpoint API is a separate, larger surface. Track [issue tracking on the repo](https://github.com/ashwinugale/smolAmem/issues) or file a request with a concrete use case.

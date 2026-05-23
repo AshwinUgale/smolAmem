@@ -1,8 +1,8 @@
 site_name: Mneme
 site_description: Multi-tier long-term memory for LLM agents.
-site_url: https://ashwinugale.github.io/ashwinugale-mneme/
-repo_url: https://github.com/ashwinugale/ashwinugale-mneme
-repo_name: ashwinugale/ashwinugale-mneme
+site_url: https://ashwinugale.github.io/smolAmem/
+repo_url: https://github.com/ashwinugale/smolAmem
+repo_name: ashwinugale/smolAmem
 edit_uri: edit/main/docs/
 
 # Material for MkDocs config. Theme + a small set of features that make
@@ -101,4 +101,4 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/ashwinugale/ashwinugale-mneme
+      link: https://github.com/ashwinugale/smolAmem

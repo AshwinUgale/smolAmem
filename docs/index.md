@@ -98,4 +98,4 @@ uv run python -m evals --runner mneme --output out/mneme.json
 
 ---
 
-[GitHub](https://github.com/ashwinugale/ashwinugale-mneme){ .md-button } [Issues](https://github.com/ashwinugale/ashwinugale-mneme/issues){ .md-button } [Changelog](https://github.com/ashwinugale/ashwinugale-mneme/blob/main/CHANGELOG.md){ .md-button }
+[GitHub](https://github.com/ashwinugale/smolAmem){ .md-button } [Issues](https://github.com/ashwinugale/smolAmem/issues){ .md-button } [Changelog](https://github.com/ashwinugale/smolAmem/blob/main/CHANGELOG.md){ .md-button }

@@ -1,6 +1,6 @@
 """Mneme — multi-tier long-term memory for LLM agents.
 
-See https://github.com/ashwinugale/ashwinugale-mneme for usage.
+See https://github.com/ashwinugale/smolAmem for usage.
 """
 
 from mneme.backends import (

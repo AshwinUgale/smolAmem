@@ -121,13 +121,13 @@ Walking skeleton. The library does something end-to-end.
 - Three tier classes (`WorkingMemoryTier`, `EpisodicMemoryTier`, `SemanticMemoryTier`).
 - `MemoryManager` facade exposing `.working`, `.episodic`, `.semantic` as attributes and a single `retrieve(query, *, k, tiers, authority_weights, half_life_days, use_confidence, now)` with multiplicative score fusion (similarity × authority × recency × confidence).
 
-[unreleased]: https://github.com/ashwinugale/ashwinugale-mneme/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/ashwinugale/ashwinugale-mneme/releases/tag/v1.0.0
-[0.8.0]: https://github.com/ashwinugale/ashwinugale-mneme/releases/tag/v0.8.0
-[0.7.0]: https://github.com/ashwinugale/ashwinugale-mneme/releases/tag/v0.7.0
-[0.6.0]: https://github.com/ashwinugale/ashwinugale-mneme/releases/tag/v0.6.0
-[0.5.0]: https://github.com/ashwinugale/ashwinugale-mneme/releases/tag/v0.5.0
-[0.4.0]: https://github.com/ashwinugale/ashwinugale-mneme/releases/tag/v0.4.0
-[0.3.0]: https://github.com/ashwinugale/ashwinugale-mneme/releases/tag/v0.3.0
-[0.2.0]: https://github.com/ashwinugale/ashwinugale-mneme/releases/tag/v0.2.0
-[0.1.0]: https://github.com/ashwinugale/ashwinugale-mneme/releases/tag/v0.1.0
+[unreleased]: https://github.com/ashwinugale/smolAmem/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/ashwinugale/smolAmem/releases/tag/v1.0.0
+[0.8.0]: https://github.com/ashwinugale/smolAmem/releases/tag/v0.8.0
+[0.7.0]: https://github.com/ashwinugale/smolAmem/releases/tag/v0.7.0
+[0.6.0]: https://github.com/ashwinugale/smolAmem/releases/tag/v0.6.0
+[0.5.0]: https://github.com/ashwinugale/smolAmem/releases/tag/v0.5.0
+[0.4.0]: https://github.com/ashwinugale/smolAmem/releases/tag/v0.4.0
+[0.3.0]: https://github.com/ashwinugale/smolAmem/releases/tag/v0.3.0
+[0.2.0]: https://github.com/ashwinugale/smolAmem/releases/tag/v0.2.0
+[0.1.0]: https://github.com/ashwinugale/smolAmem/releases/tag/v0.1.0
