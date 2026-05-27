@@ -25,14 +25,14 @@ Plus the things you'd want on top: semantic + lexical retrieval with authority w
 
 ## Install
 
+!!! info "Mneme installs as `smolAmem`, imports as `mneme`"
+    The PyPI slot `mneme` was already taken by an unrelated package, so Mneme ships under `smolAmem` on PyPI. The Python import name stays `mneme` — same dual-name pattern as `Pillow` / `PIL` or `pyyaml` / `yaml`. **Install with the PyPI name; write code with the import name.** That's the only naming quirk; the rest is exactly what you'd expect.
+
 ```bash
 pip install smolAmem                   # core only
 pip install "smolAmem[sqlite,openai]"  # SQLite backend + OpenAI embeddings
 pip install "smolAmem[qdrant,openai]"  # production-grade vector backend
 ```
-
-!!! info "Install vs import"
-    PyPI name is `smolAmem` (the `mneme` slot was already taken). The Python import name stays `mneme` — same dual-name pattern as `Pillow` / `PIL` or `pyyaml` / `yaml`. So you `pip install smolAmem` but write `import mneme` in your code.
 
 Other extras: `pgvector`, `scheduler`, `langchain`, `llamaindex`, `tokens`, `docs`. See [Backends](backends.md) and [Embedders](embedders.md) for the full matrix.
 

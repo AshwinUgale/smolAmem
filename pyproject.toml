@@ -7,7 +7,7 @@
 # Import:  ``import mneme``
 name = "smolAmem"
 version = "1.0.0"
-description = "Multi-tier long-term memory for LLM agents. Install: pip install smolAmem. Import: import mneme."
+description = "Mneme — multi-tier long-term memory for LLM agents (install: pip install smolAmem · import: import mneme)."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }

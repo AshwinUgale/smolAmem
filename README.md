@@ -2,6 +2,8 @@
 
 > Multi-tier long-term memory for LLM agents. Working / episodic / semantic tiers, pluggable storage backends, framework-agnostic adapters, and explicit forgetting + consolidation.
 
+`pip install smolAmem` · `import mneme` · [Why two names?](#install)
+
 [![docs](https://img.shields.io/badge/docs-ashwinugale.github.io%2FsmolAmem-blue)](https://ashwinugale.github.io/smolAmem/)
 [![python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
 [![license](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
@@ -16,13 +18,13 @@ Mneme is the library you wish existed.
 
 ## Install
 
+> **Mneme ships on PyPI as `smolAmem`** because the slot `mneme` was already taken by an unrelated package. The Python import name stays `mneme` — same dual-name pattern as `Pillow` / `PIL` or `pyyaml` / `yaml`. Install with the PyPI name; write code with the import name. That's the only piece of friction; the rest is exactly what you'd expect.
+
 ```bash
 pip install smolAmem                    # core only
 pip install "smolAmem[sqlite,openai]"   # SQLite + OpenAI embeddings
 pip install "smolAmem[qdrant,openai]"   # production vector backend
 ```
-
-> **Heads-up on naming:** PyPI install name is `smolAmem` (the `mneme` slot was already taken). Python import name stays `mneme` — same dual-name pattern as `Pillow` / `PIL` or `pyyaml` / `yaml`. So you `pip install smolAmem` but write `import mneme` everywhere in your code.
 
 ## Quickstart
 
